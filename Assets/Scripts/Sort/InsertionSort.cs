@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using System;
+using Cysharp.Threading.Tasks;
 
 class InsertionSort: ISortStrategy {
     public event EventHandler<ISortStrategyEventArgs> Sorted;
@@ -22,7 +23,8 @@ class InsertionSort: ISortStrategy {
 
                 leftEntity.Highlight();
                 rightEntity.Highlight();
-                //await Task.Delay(config.PauseDurationMs);
+                
+                await UniTask.Delay(config.PauseDurationMs);
                 await leftEntity.MoveLerpAsync(rightEntity.GetPosition(), config.MoveDuration);
                 await rightEntity.MoveLerpAsync(leftEntityPosition, config.MoveDuration);
                 GameObject temp = entities[j-1];

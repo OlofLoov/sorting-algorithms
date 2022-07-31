@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using System;
+using Cysharp.Threading.Tasks;
 
 class BubbleSort: ISortStrategy {
     public event EventHandler<ISortStrategyEventArgs> Sorted;
@@ -27,7 +28,7 @@ class BubbleSort: ISortStrategy {
                     await entity.MoveLerpAsync(nextEntityPosition, config.MoveDuration);
                     await nextEntity.MoveLerpAsync(entityPosition, config.MoveDuration);
 
-                    //await Task.Delay(config.PauseDurationMs);
+                    await UniTask.Delay(config.PauseDurationMs);
 
                     GameObject temp = entities[i + 1];
                     entities[i + 1] = entities[i];

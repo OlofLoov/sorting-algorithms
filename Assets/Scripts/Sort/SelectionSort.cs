@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using System;
+using Cysharp.Threading.Tasks;
 
 class SelectionSort: ISortStrategy {
     public event EventHandler<ISortStrategyEventArgs> Sorted;
@@ -25,7 +26,8 @@ class SelectionSort: ISortStrategy {
 
                 leftEntity.Highlight();
                 rightEntity.Highlight();
-                await Task.Delay(config.PauseDurationMs);
+                
+                await UniTask.Delay(config.PauseDurationMs);
 
                 if (rightEntity.value < leftEntity.value) 
                     iMin = i;                

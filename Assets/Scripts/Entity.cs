@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public class Entity : MonoBehaviour
 { 
     public int value = 0;
-    private SpriteRenderer sprite;
+    private SpriteRenderer? sprite;
     private Color originalColor;
     private bool isSelected = false;
 
@@ -46,6 +46,8 @@ public class Entity : MonoBehaviour
     public void Highlight() {
         if (isSelected) 
             return;
+        
+
         sprite.color = highlightColor;
     }
 

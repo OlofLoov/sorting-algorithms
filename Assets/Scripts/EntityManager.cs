@@ -4,7 +4,8 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System;
 using System.Linq;
-
+using Cysharp.Threading.Tasks;
+using UnityEngine.LowLevel;
 
 public class EntityManager : MonoBehaviour
 {
@@ -24,12 +25,17 @@ public class EntityManager : MonoBehaviour
 
     bool isSorting = false;
 
-    void Start() {           
+    void Start() {
+        // Get ECS Loop.
+        var playerLoop = PlayerLoop.GetCurrentPlayerLoop();
+        // Setup UniTask's PlayerLoop.
+        PlayerLoopHelper.Initialize(ref playerLoop);           
         GenerateDataSet();
     }
 
     public void GenerateDataSet() {     
-        isSorting = false;      
+        if (isSorting)
+            return;
         entities = new GameObject[numberOfObjects];
         foreach (Transform child in transform) {
             GameObject.Destroy(child.gameObject);

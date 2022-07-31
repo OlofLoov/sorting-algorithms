@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 
 class MergeSort: ISortStrategy {
     public event EventHandler<ISortStrategyEventArgs> Sorted;
@@ -31,7 +32,7 @@ class MergeSort: ISortStrategy {
         for (var i = 0; i < mergeEntities.Length; i++) {
             var entity = mergeEntities[i].transform.GetChild(0).GetComponent<Entity>();
             entity.Highlight();
-            //await Task.Delay(config.PauseDurationMs);
+            await UniTask.Delay(config.PauseDurationMs);
             entity.ResetHighlight();
         }       
 
