@@ -434,8 +434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityPrefab: {fileID: 6930920703919627578, guid: 4df2ec90ff305484c98a10ae99ce3667, type: 3}
   numberOfObjects: 130
-  MoveDuration: 0.00725
-  PauseDurationMs: 3
+  MoveDuration: 0.000725
+  PauseDurationMs: 1
 --- !u!4 &383908510
 Transform:
   m_ObjectHideFlags: 0
