@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityPrefab: {fileID: 6930920703919627578, guid: 4df2ec90ff305484c98a10ae99ce3667, type: 3}
   numberOfObjects: 130
-  MoveDuration: 0.000725
+  MoveDuration: 0.000625
   PauseDurationMs: 1
 --- !u!4 &383908510
 Transform:
@@ -624,7 +624,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.92941177, g: 0.92941177, b: 0.92941177, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
