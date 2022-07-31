@@ -31,7 +31,7 @@ class MergeSort: ISortStrategy {
         for (var i = 0; i < mergeEntities.Length; i++) {
             var entity = mergeEntities[i].transform.GetChild(0).GetComponent<Entity>();
             entity.Highlight();
-            await Task.Delay(config.PauseDurationMs);
+            //await Task.Delay(config.PauseDurationMs);
             entity.ResetHighlight();
         }       
 

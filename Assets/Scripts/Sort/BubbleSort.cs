@@ -27,7 +27,7 @@ class BubbleSort: ISortStrategy {
                     await entity.MoveLerpAsync(nextEntityPosition, config.MoveDuration);
                     await nextEntity.MoveLerpAsync(entityPosition, config.MoveDuration);
 
-                    await Task.Delay(config.PauseDurationMs);
+                    //await Task.Delay(config.PauseDurationMs);
 
                     GameObject temp = entities[i + 1];
                     entities[i + 1] = entities[i];

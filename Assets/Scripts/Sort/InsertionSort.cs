@@ -22,7 +22,7 @@ class InsertionSort: ISortStrategy {
 
                 leftEntity.Highlight();
                 rightEntity.Highlight();
-                await Task.Delay(config.PauseDurationMs);
+                //await Task.Delay(config.PauseDurationMs);
                 await leftEntity.MoveLerpAsync(rightEntity.GetPosition(), config.MoveDuration);
                 await rightEntity.MoveLerpAsync(leftEntityPosition, config.MoveDuration);
                 GameObject temp = entities[j-1];
